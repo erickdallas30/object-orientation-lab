@@ -377,9 +377,9 @@ class Vehicle {
     this.color = color;
     this.mileage = mileage;
   }
-  movie(miles) {
-    this.mileage = miles;
-    console.log(miles(this.mileage));
+  move(miles) {
+    this.mileage += miles;
+    console.log(`The new milage is ${this.mileage}`);
   }
 }
 
@@ -387,7 +387,9 @@ class Vehicle {
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
-//Code Here
+const myFirstVehicle = new Vehicle(8, "white", 250);
+// console.log(myFirstVehicle);
+// myFirstVehicle.move(20);
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
