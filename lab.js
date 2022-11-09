@@ -136,7 +136,7 @@ let population = {
 function totalPopulation(obj) {
   console.log(obj);
   const { utah, california, texas, arizona } = obj;
-  return `The total is: ${utah + california + texas + arizona}`;
+  return `The total population is: ${utah + california + texas + arizona}`;
 }
 console.log(totalPopulation(population));
 //////////////////////////// PROBLEM 9 ////////////////////////////
@@ -150,9 +150,19 @@ console.log(totalPopulation(population));
 */
 
 //Code Here
+let nutrients = {
+  carb: "sugar",
+  fat: "tortillas",
+  protein: "steak",
+};
+
 function ingredients(obj) {
-  const = {carb, fat, protein} = obj
+  const { carb, fat, protein } = obj;
+  let nutrientsArray = [];
+  nutrientsArray.push(carb, fat, protein);
+  return nutrientsArray;
 }
+console.log(ingredients(nutrients));
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
 var user = {
@@ -172,14 +182,17 @@ var user = {
 */
 
 //Code Here
-
+user.name = "Bryan G. Smith";
+user.email = "bryan.smith@devmounta.in";
+console.log(user);
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
   Using the user object above, delete the users age off of the object.
 */
 
 //Code Here
-
+delete user.age;
+console.log(user);
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
   Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
@@ -188,7 +201,16 @@ var user = {
 */
 
 //Code here
+class Cat {
+  constructor(name, age, color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
 
+let myCat = new Cat("Tom", 2, "White");
+console.log(myCat.name);
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
   Create a class called 'Wizard'. Make sure to call your constructor, and require these 3 parameters: name, age, favoriteSpell.
@@ -198,7 +220,18 @@ var user = {
 */
 
 //Code here
-
+class Wizard {
+  constructor(name, age, favoriteSpell) {
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell() {
+    console.log(`${this.name} has cast ${this.favoriteSpell}`);
+  }
+}
+let wizard1 = new Wizard("Erick", 40, "cachuwa");
+wizard1.castSpell();
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
@@ -223,7 +256,23 @@ var user = {
 */
 
 //Code Here
-
+class Phone {
+  constructor(brand, model, storage, color, price) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+  sell() {
+    this.sold = true;
+    console.log(`${this.brand} ${this.model} has been sold`);
+  }
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
+}
 /*
     Next make three new phone instances using your class.
     Send in values of your choice. They should match these data types:
@@ -235,6 +284,9 @@ var user = {
 */
 
 //Code Here
+let phone1 = new Phone("Apple", "Iphone", 256, "White", 1200);
+let phone2 = new Phone("Nokia", "1234", 12, "black", 120);
+let phone3 = new Phone("Samsung", "note", 128, "pink", 800);
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -244,7 +296,8 @@ var user = {
 */
 
 //Code Here
-
+phone1.changePrice(1950);
+console.log(phone1);
 /*
   Now call the sell method on one of your other phone objects
 
@@ -252,6 +305,8 @@ var user = {
 */
 
 //Code Here
+phone2.sell();
+console.log(phone2.sold);
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
@@ -270,6 +325,7 @@ const colors = {
 //do not edit this object
 
 //Code Here
+
 
 /*
  Now use the spread operator to combine the following 2 objects into one. 
