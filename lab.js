@@ -325,14 +325,15 @@ const colors = {
 //do not edit this object
 
 //Code Here
-
+//const colorsCopy = JSON.parse(JSON.stringify(colors));
+const colorsCopy = { ...colors };
+console.log(colorsCopy);
 
 /*
  Now use the spread operator to combine the following 2 objects into one. 
  Call the new variable helensInfo. 
  When they combine, none of the properties should be repeated.
 */
-
 //do not edit the objects below
 const contactInfo = {
   firstName: "Helen",
@@ -352,6 +353,8 @@ const shippingInfo = {
 //do not edit the objects above
 
 //Code Here
+const helensInfo = { ...contactInfo, ...shippingInfo };
+console.log(helensInfo);
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
@@ -368,6 +371,17 @@ const shippingInfo = {
 */
 
 //Code Here
+class Vehicle {
+  constructor(capacity, color, mileage) {
+    this.capacity = capacity;
+    this.color = color;
+    this.mileage = mileage;
+  }
+  movie(miles) {
+    this.mileage = miles;
+    console.log(miles(this.mileage));
+  }
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
